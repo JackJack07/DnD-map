@@ -8,44 +8,9 @@ body {
   background-size: cover;
 }
 
-/* Container for hex grid */
-.hex-grid {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Make canvas stretch over entire screen */
+#hexGridCanvas {
+  display: block;
   width: 100%;
   height: 100%;
 }
-
-/* Each row of hexes */
-.hex-row {
-  display: flex;
-}
-
-/* Offset every other row */
-.hex-row:nth-child(even) {
-  margin-left: 45px; /* half hex width */
-}
-
-/* Hex tile */
-.hex {
-  width: 90px;   /* hex width */
-  height: 104px; /* correct hex height for flat-top orientation */
-  background: rgba(255, 255, 0, 0); /* invisible */
-  clip-path: polygon(
-    25% 0%, 75% 0%,   /* top left / right */
-    100% 50%,         /* right middle */
-    75% 100%, 25% 100%, /* bottom right / left */
-    0% 50%            /* left middle */
-  );
-  transition: background 0.2s;
-  margin: 0; /* no spacing */
-}
-
-/* Hover effect */
-.hex:hover {
-  background: rgba(255, 255, 0, 0.4);
-}
-
