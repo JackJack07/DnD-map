@@ -5,7 +5,7 @@ body {
   width: 100vw;
   overflow: hidden;
   background: url("map.jpg") no-repeat center center fixed;
-  background-size: cover; /* stretch across screen */
+  background-size: cover;
 }
 
 /* Container for hex grid */
@@ -22,18 +22,17 @@ body {
 /* Each row of hexes */
 .hex-row {
   display: flex;
-  justify-content: center;
 }
 
-/* Stagger even rows */
+/* Offset every other row (half a hex width) */
 .hex-row:nth-child(even) {
-  margin-left: 45px; /* half hex width */
+  margin-left: 45px; /* half of hex width (90px/2) */
 }
 
 /* Hex tile */
 .hex {
-  width: 90px;   /* wider than tall */
-  height: 78px;  /* correct ratio for hex */
+  width: 90px;
+  height: 78px;
   background: rgba(255, 255, 0, 0); /* invisible */
   clip-path: polygon(
     50% 0%,   /* top */
@@ -44,7 +43,7 @@ body {
     7% 25%    /* top-left */
   );
   transition: background 0.2s;
-  margin: 2px;
+  margin: -1px; /* overlap edges slightly */
 }
 
 /* Hover effect */
