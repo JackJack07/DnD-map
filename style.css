@@ -24,29 +24,28 @@ body {
   display: flex;
 }
 
-/* Offset every other row (half a hex width) */
+/* Offset every other row */
 .hex-row:nth-child(even) {
-  margin-left: 45px; /* half of hex width (90px/2) */
+  margin-left: 45px; /* half hex width */
 }
 
 /* Hex tile */
 .hex {
-  width: 90px;
-  height: 78px;
+  width: 90px;   /* hex width */
+  height: 104px; /* correct hex height for flat-top orientation */
   background: rgba(255, 255, 0, 0); /* invisible */
   clip-path: polygon(
-    50% 0%,   /* top */
-    93% 25%,  /* top-right */
-    93% 75%,  /* bottom-right */
-    50% 100%, /* bottom */
-    7% 75%,   /* bottom-left */
-    7% 25%    /* top-left */
+    25% 0%, 75% 0%,   /* top left / right */
+    100% 50%,         /* right middle */
+    75% 100%, 25% 100%, /* bottom right / left */
+    0% 50%            /* left middle */
   );
   transition: background 0.2s;
-  margin: -1px; /* overlap edges slightly */
+  margin: 0; /* no spacing */
 }
 
 /* Hover effect */
 .hex:hover {
   background: rgba(255, 255, 0, 0.4);
 }
+
