@@ -25,24 +25,26 @@ body {
   justify-content: center;
 }
 
-/* Stagger even rows to create honeycomb */
+/* Stagger even rows */
 .hex-row:nth-child(even) {
-  margin-left: 40px; /* half hex width */
+  margin-left: 45px; /* half hex width */
 }
 
 /* Hex tile */
 .hex {
-  width: 80px;
-  height: 80px;
+  width: 90px;   /* wider than tall */
+  height: 78px;  /* correct ratio for hex */
   background: rgba(255, 255, 0, 0); /* invisible */
   clip-path: polygon(
-    25% 6.7%, 75% 6.7%, 
-    100% 50%, 
-    75% 93.3%, 25% 93.3%, 
-    0% 50%
+    50% 0%,   /* top */
+    93% 25%,  /* top-right */
+    93% 75%,  /* bottom-right */
+    50% 100%, /* bottom */
+    7% 75%,   /* bottom-left */
+    7% 25%    /* top-left */
   );
   transition: background 0.2s;
-  margin: 2px; /* small gap */
+  margin: 2px;
 }
 
 /* Hover effect */
